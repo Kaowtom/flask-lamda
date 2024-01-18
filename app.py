@@ -22,7 +22,7 @@ def create(id,name , career):
         return jsonify(message=f"Creating unsuccessful for {id} {name} {career}")
 
 # Read
-@app.route("/view", methods=["GET"])
+@app.route("/view")
 def view():
     response = table.scan()
     data = response['Items']
