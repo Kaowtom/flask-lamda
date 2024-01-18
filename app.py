@@ -17,7 +17,8 @@ def create(id,name , career):
         )
     if response['ResponseMetadata']['HTTPStatusCode'] == 200:
         # print('response successful')
-        return jsonify(message=f"Creating successful for {id} {name} {career}")
+        return response
+        # return jsonify(message=f"Creating successful for {id} {name} {career}")
     else:
         return jsonify(message=f"Creating unsuccessful for {id} {name} {career}")
 
