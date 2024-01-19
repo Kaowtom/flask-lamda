@@ -26,7 +26,7 @@ jobs:
           pip install boto3
 
       - name: Run serverless wsgi serve
-        run: serverless wsgi serve
+        run: nohup serverless wsgi serve &
 
       - name: Wait for serverless to start
         run: sleep 10  # Adjust the sleep duration based on your serverless startup time
