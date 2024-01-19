@@ -26,16 +26,16 @@ jobs:
           pip install boto3
 
       - name: Run serverless wsgi serve
-        run: nohup serverless wsgi serve &
+        run: serverless wsgi serve
 
-      - name: Wait for serverless to start
-        run: sleep 50  # Adjust the sleep duration based on your serverless startup time
+      # - name: Wait for serverless to start
+      #   run: sleep 20 
         
-      - name: Debug Files in Directory
-        run: ls
+      # - name: Debug Files in Directory
+      #   run: ls
   
-      - name: Run Postman Tests
-        uses: matt-ball/newman-action@master
-        with:
-          collection: CollectionCURD.json
-          environment: EnviromentCURD.json
+      # - name: Run Postman Tests
+      #   uses: matt-ball/newman-action@master
+      #   with:
+      #     collection: CollectionCURD.json
+      #     environment: EnviromentCURD.json
