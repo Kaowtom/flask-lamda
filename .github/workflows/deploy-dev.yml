@@ -18,7 +18,9 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g serverless
 
       - name: Run serverless wsgi serve
         run: serverless wsgi serve
