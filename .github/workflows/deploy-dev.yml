@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@master
       - uses: matt-ball/newman-action@master
         with:
-          collection: /CollectionCURD.json
-          environment: /EnviromentCURD.json
+          collection: CollectionCURD.json
+          environment: EnviromentCURD.json
