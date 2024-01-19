@@ -1,1 +1,15 @@
-{"id":"d39f4313-148b-4525-93fe-1858d27e55e2","name":"flask-api","values":[{"key":"BASE_URL","value":"https://vw2x3eeb91.execute-api.us-east-1.amazonaws.com","enabled":true,"type":"default"}]}
+{
+	"id": "d39f4313-148b-4525-93fe-1858d27e55e2",
+	"name": "flask-api",
+	"values": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:5000",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-01-19T07:34:48.261Z",
+	"_postman_exported_using": "Postman/10.22.2"
+}
