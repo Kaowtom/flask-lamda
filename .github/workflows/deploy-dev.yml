@@ -3,14 +3,33 @@ name: Newman Run
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   newman:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: matt-ball/newman-action@master
+      - name: Checkout Repository
+        uses: actions/checkout@master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run serverless wsgi serve
+        run: |
+          # Add any setup commands before running serverless wsgi serve
+          serverless wsgi serve &
+
+      - name: Wait for serverless to start
+        run: sleep 10  # Adjust the sleep duration based on your serverless startup time
+
+      - name: Run Postman Tests
+        uses: matt-ball/newman-action@master
         with:
           collection: CollectionCURD.json
-          environment: EnviromentCURD.json
+          environment: EnvironmentCURD.json
