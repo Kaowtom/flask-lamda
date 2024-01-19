@@ -25,7 +25,7 @@ resources:
     PeopleTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: peopleGSI
+        TableName: peopleGSI-2
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S  # Assuming id is a string, adjust if needed
