@@ -22,6 +22,8 @@ jobs:
           npm install
           npm install -g serverless
           pip install werkzeug
+          pip install flask
+          pip install boto3
 
       - name: Run serverless wsgi serve
         run: serverless wsgi serve
