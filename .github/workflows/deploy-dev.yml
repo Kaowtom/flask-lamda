@@ -24,6 +24,7 @@ jobs:
           pip install werkzeug
           pip install flask
           pip install boto3
+          pip install markupsafe
 
       - name: Run serverless wsgi serve
         run: nohup serverless wsgi serve &
