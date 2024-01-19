@@ -21,7 +21,7 @@ jobs:
         run: |
           npm install
           npm install -g serverless
-          npm install werkzeug
+          pip install werkzeug
 
       - name: Run serverless wsgi serve
         run: serverless wsgi serve
