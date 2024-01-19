@@ -1,0 +1,16 @@
+name: Newman Run
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
+        with:
+          collection: /CollectionCURD.json
+          environment: /EnviromentCURD.json
