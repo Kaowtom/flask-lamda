@@ -25,20 +25,20 @@ resources:
     PeopleTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: peopleGSI-2
+        TableName: peopleGSI
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S  # Assuming id is a string, adjust if needed
-          - AttributeName: name
-            AttributeType: S  # Assuming name is a string, adjust if needed
-          - AttributeName: career
-            AttributeType: S  # Assuming career is a string, adjust if needed
         KeySchema:
           - AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 5
           WriteCapacityUnits: 5
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES  # Adjust based on your needs
+        SSESpecification:
+          SSEEnabled: true
 
 functions:
   api:
