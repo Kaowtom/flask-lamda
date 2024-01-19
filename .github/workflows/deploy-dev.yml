@@ -27,7 +27,10 @@ jobs:
 
       - name: Wait for serverless to start
         run: sleep 10  # Adjust the sleep duration based on your serverless startup time
-
+        
+      - name: Debug Files in Directory
+        run: ls
+  
       - name: Run Postman Tests
         uses: matt-ball/newman-action@master
         with:
