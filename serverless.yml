@@ -20,6 +20,25 @@ provider:
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:us-east-1:092973695436:table/peopleGSI-2"
 
+resources:
+  Resources:
+    PeopleTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: peopleGSI-2
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S  # Assuming id is a string, adjust if needed
+          - AttributeName: name
+            AttributeType: S  # Assuming name is a string, adjust if needed
+          - AttributeName: career
+            AttributeType: S  # Assuming career is a string, adjust if needed
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
 
 functions:
   api:
